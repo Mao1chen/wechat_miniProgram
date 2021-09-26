@@ -1,0 +1,64 @@
+{
+    "pages": [
+        "pages/Index/index",
+        "pages/Video/video",
+        "pages/Center/center"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#d43c33",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "网抑云音乐"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/Index/index",
+                "text": "主页",
+                "iconPath": "/static/images/tabs/home.png",
+                "selectedIconPath": "/static/images/tabs/tab-home-current.png"
+            },
+            {
+                "pagePath": "pages/Video/video",
+                "text": "视频",
+                "iconPath": "/static/images/tabs/select.png",
+                "selectedIconPath": "/static/images/tabs/selected.png"
+            },
+            {
+                "pagePath": "pages/Center/center",
+                "text": "个人中心",
+                "iconPath": "/static/images/tabs/tab-my.png",
+                "selectedIconPath": "/static/images/tabs/tab-my-current.png"
+            }
+        ],
+        "color": "#333",
+        "selectedColor": "#d43c33"
+    },
+    "requiredBackgroundModes": [
+        "audio",
+        "location"
+    ],
+    "subPackages": [
+        {
+            "name": "song",
+            "root":"songPackage",
+            "pages": [
+                "pages/DayRecommend/recommend",
+                "pages/SongDetail/songDetail"
+            ]
+        },
+        {
+            "name": "login",
+            "root": "loginPackage",
+            "pages": [
+                "pages/Login/login"
+            ],
+            "independent": false
+        }
+    ],
+    "preloadRule": {
+        "pages/Index/index":{
+            "packages": ["songPackage"]
+        }
+    },
+    "sitemapLocation": "sitemap.json"
+}

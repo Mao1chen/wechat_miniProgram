@@ -1,0 +1,34 @@
+<view class="songDetailContainer">
+        <view class="detailSongContent">
+            <view class="title">{{songDetail.name}}</view>
+            <image class="needle {{isswitch && 'spin'}}" src="/static/images/song/needle.png" ></image>
+            <view>
+                <image src="/static/images/song/disc.png" class="disc"></image>
+            </view>
+                <image src="{{songDetail.al.picUrl}}" class="backGroundIMG {{ isswitch && 'discAnimation'}}"></image>
+        </view>
+         <!-- 进度条控制区域 -->
+  <view class="progressControl">
+    <text>{{currentTime}}</text>
+    <!-- 总进度条 -->
+    <view class="barControl">
+      <!-- 实时进度条 -->
+      <view class="audio-currentTime-Bar" style="width: {{currentWidth + 'rpx'}}">
+        <!-- 小圆球 -->
+        <view class="audio-circle"></view>
+      </view>
+    </view>
+    <text>{{durationTime}}</text>
+  </view>
+  <!-- 底部控制播放区域 -->
+  <view class="musicControl">
+    <text class="iconfont icon-suijibofang"></text>
+
+    <text class="iconfont icon-shangyishoushangyige" id="pre" bindtap="handleSwitch"></text>
+
+    <text class="iconfont {{isswitch?'icon-zanting':'icon-bofang'}} big" bindtap="setIsSwitch"></text>
+    <text class="iconfont icon-24gl-next" id="next" bindtap="handleSwitch"></text>
+
+    <text class="iconfont icon-androidgengduo"></text>
+  </view>
+</view>

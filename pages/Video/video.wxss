@@ -1,0 +1,86 @@
+.header {
+    display: flex;
+    padding: 10rpx 20rpx;
+}
+.header .search {
+    border: 1rpx solid #ccc;
+    border-radius: 10rpx;
+    color: #d43c33;
+    text-align: center;
+    flex: 1;
+}
+.header image {
+    width: 50rpx;
+    height: 50rpx;
+    padding: 0 20rpx;
+}
+.typeNavContainer {
+    height:60rpx;
+    display:flex;
+    margin-bottom: 30rpx;
+}
+.typeNavContainer .typeNavItem{
+    white-space: nowrap;
+    padding: 10rpx 20rpx;
+    height: 50rpx;
+}
+.active {
+    border-bottom: 1rpx solid #d43c33;
+}
+.videoContainer {
+    width: 100%;
+    /* vh vw视口单位,1ch = 1%视口高度 calc动态计算 */
+    height: calc(100vh - 130rpx);
+}
+.videoContainer .videoItem {
+    padding: 0 30rpx;
+}
+.videoContainer .videoItem .common {
+    width: 100%;
+    height: 320rpx;
+    border-radius: 20rpx;
+}
+.footer {
+    border-top: 1rpx solid #eee;
+    padding: 20rpx 0;
+  }
+  .footer .avatar {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  
+  .footer  .nickName {
+    font-size: 26rpx;
+    vertical-align: middle;
+    margin-left: 20rpx;
+  }
+  
+  .footer .comments_praised {
+    float: right;
+  }
+  
+  .comments_praised .btn {
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  
+  .comments_praised .btn:after {
+    border: none;
+  }
+  
+  .comments_praised .item {
+    margin-left: 50rpx;
+    position: relative;
+  }
+  
+  .comments_praised .item .count {
+    position: absolute;
+    top: -20rpx;
+    font-size: 20rpx;
+  }
+  
+  

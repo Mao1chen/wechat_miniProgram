@@ -1,0 +1,83 @@
+/* index的样式 */
+.banners {
+    width: 100%;
+    height: 300rpx;
+}
+.banners image {
+   height: 100%;
+   width: 100%;
+}
+.navContainer {
+    display: flex;
+}
+.navContainer .navItem {
+    width:20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navItem .iconfont {
+    width: 100rpx;
+    height: 100rpx;
+    background-color: rgb(240, 19, 19);
+    color:#fff;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 50rpx;
+    border-radius: 50%;
+    margin: 20rpx 0;
+}
+.navItem text {
+    font-size: 26rpx;
+}
+.recommendContainer {
+    margin-top: 20rpx;
+    height: 400rpx;
+}
+.scrollContainer {
+    display: flex;
+    margin-top: 23rpx;
+}
+.scrollItem {
+    width: 200rpx;
+    padding: 0 10rpx;
+}
+.scrollItem image {
+    width: 100%;
+    height: 200rpx;
+}
+.scrollItem text {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 
+    多行文本
+    display: -webkit-box;    
+    -webkit-box-orient: vertical;    
+    -webkit-line-clamp: 3;    
+    overflow: hidden;  */
+    font-size: 26rpx;
+    padding: 0 20rpx;
+}
+.ranks {
+    height: 450rpx;
+}
+.ranks swiper-item {
+    margin-left: 20rpx;
+    margin-top: 40rpx;
+    padding: 20rpx 0 0 20rpx;
+    background-color:#fbfbfb ;
+}
+.ranks image {
+    width: 100rpx;
+    height: 100rpx;
+    vertical-align: middle;
+}
+.ranks .rankitem {
+    margin-top: 20rpx;
+}
+.ranks .rankitem text{
+    padding: 0 30rpx;
+    overflow: hidden;
+}

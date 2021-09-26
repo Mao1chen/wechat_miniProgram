@@ -1,0 +1,56 @@
+<!-- index首页 -->
+<view class="indexContainer">
+    <swiper class="banners" indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay="true">
+        <swiper-item wx:for="{{banners}}" wx:for-item="banners" wx:key='bannerId'>
+            <image src="{{banners.pic}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="navContainer">
+        <view class="navItem" bindtap="navRecommend">
+            <text class="iconfont icon-tuijian"></text>
+            <text>每日推荐</text>
+        </view>
+        <view class="navItem">
+            <text class="iconfont icon-yinyue"></text>
+            <text>other页面</text>
+        </view>
+        <view class="navItem">
+            <text class="iconfont icon-paihang"></text>
+            <text>排行榜</text>
+        </view>
+        <view class="navItem">
+            <text class="iconfont icon-diantai"></text>
+            <text>电台</text>
+        </view>
+        <view class="navItem">
+            <text class="iconfont icon-zhibo"></text>
+            <text>直播</text>
+        </view>
+    </view>
+    <view>
+    </view>
+    <view class="recommendContainer">
+        <NavHeader title="推荐歌曲" nav="为你精心推荐"></NavHeader>
+        <view class="recContent">
+            <scroll-view class="scrollContainer" enable-flex scroll-x>
+                <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id">
+                    <image src="{{item.picUrl}}"></image>
+                    <text>{{item.name}}</text>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="rankContainer">
+        <NavHeader title='排行榜' nav="热歌风向标"></NavHeader>
+        <swiper class="ranks" next-margin='200rpx'>
+            <swiper-item wx:for="{{RanksList}}" wx:key ='name'>
+                <view class="title">{{item.name}}</view>
+                <view class="rankitem" wx:for="{{item.tracks}}" wx:key ='id' wx:for-item ='tracksItem'>
+                    <image src="{{tracksItem.al.picUrl}}"></image>
+                    <text>{{index+1}}</text>
+                    <text>{{tracksItem.name}}</text>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

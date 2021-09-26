@@ -1,0 +1,59 @@
+<!--pages/video/video.wxml-->
+<view class="videoContainer">
+    <view class="header">
+        <image src="/static/images/video/video.jpg"></image>
+        <view class="search">搜索音乐</view>
+        <image src="/static/images/logo.png"></image>
+    </view>
+    <view>
+        <scroll-view class="typeNavContainer" enable-flex scroll-x>
+            <view class="typeNavItem" wx:for="{{videoGroupList}}" wx:key="id">
+            <!-- 一点击这个div我们就把当前的ID传过去设置进状态,这边动态显示,状态ID等于当前这个ID就给当前这个设置高亮,由状态控制是否高亮的时候我们就排他思想 -->
+                <view class="{{navId === item.id?'active':''}}" bindtap="setNavId" id="{{item.id}}" >{{item.name}}</view>
+            </view>
+        </scroll-view>
+        <scroll-view class="videoContainer"
+        refresher-enabled
+        scroll-y bindrefresherrefresh="handleNewData" 
+        refresher-triggered='{{isTrue}}'
+        bindscrolltolower = 'handleBase'
+        >
+        <!-- 设置y轴滚动的时候需要给父元素设置一个高度 -->
+            <view wx:for="{{videoList}}" wx:key="id" class="videoItem" >
+                <video src="{{item.data.urlInfo.url}}" object-fit="cover" bindplay="handleSwitch"
+                  id="{{item.data.vid}}" class="common"
+                  wx:if="{{imgId == item.data.vid}}"
+                  bindtimeupdate="handleSetTime"
+                  bindended="clearVideoTime"
+                 ></video>
+                 <!-- 存在多个视频的时候性能优化,用image代替可提高视频效率,下面图片点击就把当前视频ID给传过去
+                      然后设置给state里的值,图片和视频是互斥关系,vx:if wx:else,那边回调函数接收到视频ID并设置给对象,这边条件成立视频显现出来,图片隐藏,并且完美规避掉多个视频同时播放的问题
+                 -->
+                 <image src="{{item.data.coverUrl}}" class="common" 
+                 wx:else
+                 bindtap="handleSwitch"
+                 id="{{item.data.vid}}"
+                 ></image>
+                 <view class="content">{{item.data.title}}</view>
+        <view class="footer">   
+  <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+  <text class="nickName">{{item.data.creator.nickname}}</text>
+  <view class="comments_praised">
+    <text class="item">
+      <text class="iconfont icon-aixin"></text>
+      <text class="count">{{item.data.praisedCount}}</text>
+    </text>
+    <text class="item">
+      <text class="iconfont icon-pinglun"></text>
+      <text class="count">{{item.data.commentCount}}</text>
+    </text>
+    <button open-type="share" class="item btn">
+      <text class="iconfont icon-gengduo"></text>
+    </button>
+  </view>
+        </view>
+            </view>
+        </scroll-view>
+       
+    </view>
+</view>

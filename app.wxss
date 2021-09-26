@@ -1,0 +1,5 @@
+/* 放公共样式的地方 */
+@import  '/static/iconfont/iconfont.wxss'
+page {
+    height: 100%;
+}

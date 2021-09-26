@@ -1,0 +1,54 @@
+.recommendHeader {
+    height: 300rpx;
+    width: 100%;
+    position: relative;
+}
+.recommendHeader image {
+    height: 300rpx;
+    width: 100%;
+}
+.recommendHeader .dateContainer {
+    position: absolute;
+    top: 40%;
+    right: 42%;
+    width: 100rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+}
+.recommendHeader .dateContainer .day {
+    font-size: 40rpx;
+}
+.recommendContent {
+    padding: 20rpx;
+}
+.recommendContent .option .more {
+    float: right;
+}
+.songContainer {
+    padding: 20rpx;
+    height: calc(100vh - 425rpx);
+}
+.songContainer .songItem {
+    display: flex;
+    position: relative;
+    height: 80rpx;
+    padding-bottom: 40rpx;
+}
+.songContainer .songItem image {
+    height: 80rpx;
+    width: 80rpx;
+}
+.songContainer .songItem .songName {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30rpx;
+}
+.songContainer .songItem .iconfont {
+    position: absolute;
+    right: 50rpx;
+    font-size: 50rpx;
+    color: #ccc;
+    line-height: 80rpx;
+}

@@ -1,0 +1,8 @@
+<!-- 定义Header组件 -->
+<view class="recHeader">
+    <view class="title">{{title}}</view>
+    <view class="titleNext">
+        <text class="left">{{nav}}</text>
+        <text class="more">查看更多</text>
+    </view>
+</view>
